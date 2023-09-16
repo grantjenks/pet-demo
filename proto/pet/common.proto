@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package pet.common;
+
+import "google/protobuf/date.proto";
+
+message PetData {
+  string name = 1;
+  google.protobuf.Date date_of_birth = 2;
+}
+
+message Pet {
+  int64 id = 1;
+  PetData data = 2;
+}

@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package pet.service;
+
+import "common.proto";
+import "google/protobuf/field_mask.proto";
+import "google/protobuf/empty.proto";
+
+message CreatePetRequest {
+  PetData pet_data = 1;
+}
+
+message CreatePetResponse {
+  Pet pet = 1;
+}
+
+message ReadPetRequest {
+  int64 id = 1;
+}
+
+message ReadPetResponse {
+  Pet pet = 1;
+}
+
+message UpdatePetRequest {
+  int64 id = 1;
+  PetData pet_data = 2;
+  google.protobuf.FieldMask update_mask = 3;
+}
+
+message UpdatePetResponse {
+  Pet pet = 1;
+}
+
+message DeletePetRequest {
+  int64 id = 1;
+}
+
+message DeletePetResponse {
+  google.protobuf.Empty empty = 1;
+}
+
+service PetService {
+  rpc CreatePet(CreatePetRequest) returns (CreatePetResponse);
+  rpc ReadPet(ReadPetRequest) returns (ReadPetResponse);
+  rpc UpdatePet(UpdatePetRequest) returns (UpdatePetResponse);
+  rpc DeletePet(DeletePetRequest) returns (DeletePetResponse);
+}
