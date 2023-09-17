@@ -2,11 +2,11 @@ syntax = "proto3";
 
 package pet.common;
 
-import "google/protobuf/date.proto";
+import "google/type/date.proto";
 
 message PetData {
   string name = 1;
-  google.protobuf.Date date_of_birth = 2;
+  google.type.Date date_of_birth = 2;
 }
 
 message Pet {

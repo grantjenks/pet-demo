@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package pet.service;
 
-import "common.proto";
+import "pet/common.proto";
 import "google/protobuf/field_mask.proto";
 import "google/protobuf/empty.proto";
 

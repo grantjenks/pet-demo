@@ -1,0 +1,26 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "pet_common_proto",
+    srcs = ["pet/common.proto"],
+    deps = [
+        "@com_google_googleapis//google/type:date_proto",
+    ],
+)
+
+proto_library(
+    name = "pet_service_proto",
+    srcs = ["pet/service.proto"],
+    deps = [
+        ":pet_common_proto",
+        "@com_google_protobuf//:empty_proto",
+        "@com_google_protobuf//:field_mask_proto",
+    ],
+)
+
+load("@rules_proto_grpc//python:defs.bzl", "python_grpc_library")
+
+python_grpc_library(
+    name = "pet_python_grpc",
+    protos = ["@rules_proto_grpc//proto:pet_service_proto"],
+)
