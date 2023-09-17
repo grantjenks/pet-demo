@@ -22,5 +22,5 @@ load("@rules_proto_grpc//python:defs.bzl", "python_grpc_library")
 
 python_grpc_library(
     name = "pet_python_grpc",
-    protos = ["@rules_proto_grpc//proto:pet_service_proto"],
+    protos = [":pet_service_proto"],
 )

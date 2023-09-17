@@ -7,7 +7,6 @@ bazel build //proto:pet_service_proto
 ```
 
 ```
-
 bazel build //proto/pet:pet_python_grpc
 
 bazel build //service:service_bin
