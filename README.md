@@ -4,6 +4,9 @@
 bazel build //proto:pet_common_proto
 
 bazel build //proto:pet_service_proto
+```
+
+```
 
 bazel build //proto/pet:pet_python_grpc
 
